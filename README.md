@@ -23,3 +23,11 @@ _-Sentiment analysis is the practice of using algorithms to classify various sam
 ## NTLK package
 
 - The NLTK library contains various utilities that allow you to effectively manipulate and analyze linguistic data. Among its advanced features are **text classifiers** that you can use for many kinds of classification, including sentiment analysis.
+
+## compiling data
+
+## identify stop words
+
+- Words like “of,” “a,” “the,” and similar. These common words are called stop words, and they can have a negative effect on your analysis because they occur so often in the text.
+
+##
