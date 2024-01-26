@@ -1,31 +1,45 @@
 # project sentiment
 
-**My goal is to create an effective sentiment analysis data product that will discover latent aspects in review data using the LARAM model**
+I want to build an aspect identification model that:
 
-_-Sentiment analysis is the practice of using algorithms to classify various samples of related text into overall positive and negative categories._
+1. Identifies the key topics (aspects) of customer reviews regardless of if the review is very short or has multiple sentences.
+2. Identifies the sentiment of each topic found per review on a scale ranging from: very negative, negative, neutral, positive, very positive
+3. Prioritize finding the reason (descriptors) that cause the aspect to be classified as positive or negative. For example take the following review: “Clean, good location Clean, good location with many restaurants, shopping near. Rooms are small, suggest requesting double beds for extra room. A/C did not cool well. Trash bins in lobby and out front overflowing/nasty. I would give 3.5 if an option.” Let’s say one of the aspects found from this review is “A/C” from the sentence “A/C did not cool well”, I would want to identify “not well” or “not cool” cause those words are obviously the reason it’s being classified as negative.
 
+=
 
-# exploring different areas of text analytics.
+## exploring different areas of text analytics.
+
 _Looking to learn more about text analytics. My overall goal is to train an accurate sentiment analyzer_
 
+\*custom created dataset of gathered hotel reviews
 
-*Amazon Customer Reviews with Sentiment
-- https://www.kaggle.com/datasets/thedevastator/amazon-customer-reviews-with-2013-2019-sentiment
+## methods I'm exploring
 
-## methods I'm exploring 
+- find a python package made for this type of analysis
+- create own custom code to handle this task
 
-### * Bag of Words method
-> - taking each word from a sentence to get some kind of measure by which we can find out if the word exists in another sentence or not and also its importance
-> - each sentence in the google reviews will be treated as a bag of words, in other words each sentence is a **document** and all the documents make up a **corpus**
+## steps
 
-#### goals
-1. create a dictionary of all the unique words in the corpus (exclusding words like "the", "an", "is" etc)
-1. convert all documents into vectors which will represent the presence of words from our dictionary in the documents.
-* *We're going to do this with the Tf-idf vectorizer in sklearn*
+### Data Collection
 
-#### steps
-1. Count the number of times each word appears in each document(hotel review)
-    1. create feature vector and find out of how many zeroes are in my feature vector.
-    1. calculate the non-zero value density in the vector
-    1. remove stopwords and non-english characters
-    1. test stemming or lemmatization
+- Gather hotel reviews from tripadvisor
+
+### 1. Aspect Extraction
+
+- **Objective:** Extract aspects (key topics) from each review.
+
+### 2. Sentiment Analysis
+
+- **Objective:** Determine the sentiment for each identified aspect within the review.
+
+### 3. Descriptor Identification
+
+- **Objective:** Identify specific words or phrases in the text that influence the sentiment of an aspect.
+
+### Implementation Plan:
+
+1. **Preprocessing:** Clean the text data, handling different sentence structures, especially for longer reviews.
+2. **Aspect Extraction:** Implement a model to extract aspects from each review.
+3. **Sentiment Analysis:** For each extracted aspect, analyze the sentiment of the text surrounding it.
+4. **Descriptor Identification:** Utilize dependency parsing to identify the words or phrases causing the sentiment.
