@@ -19,11 +19,13 @@ _Looking to learn more about text analytics. My overall goal is to train an accu
 - find a python package made for this type of analysis
 - create own custom code to handle this task
 
-## steps
+## scope (tools used)
+
+Python - numpy - pandas - tensorflow - nltk - scikit-learn - spacy - tensorflow - torch -
 
 ### Data Collection
 
-- Gather hotel reviews from tripadvisor
+- Use Amazon reviews from kaggle
 
 ### 1. Aspect Extraction
 
@@ -43,3 +45,11 @@ _Looking to learn more about text analytics. My overall goal is to train an accu
 2. **Aspect Extraction:** Implement a model to extract aspects from each review.
 3. **Sentiment Analysis:** For each extracted aspect, analyze the sentiment of the text surrounding it.
 4. **Descriptor Identification:** Utilize dependency parsing to identify the words or phrases causing the sentiment.
+
+### Function creation skeletons:
+
+function preprocess_text(text):
+Lowercase the text
+Remove punctuation
+Remove stopwords
+Return the cleaned text
